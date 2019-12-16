@@ -2,7 +2,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 
 const tokenService = require('../../helpers/auth/tokenService');
-const db = require('../models/userModel');
+const db = require('../models/userModels');
 
 //=========================================== Register API
 //turn this into async
