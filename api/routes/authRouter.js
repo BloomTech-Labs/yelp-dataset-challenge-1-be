@@ -18,22 +18,12 @@ router.post('/register', async (req, res) => {
     res.status(500).json(error);
   }
 });
-    
-  // deprecated code
-  //   db.add(user)
-  //     .then(saved => {
-  //       res.status(201).json(saved, user);
-  //     })
-  //     .catch(error => {
-  //       res.status(500).json(error);
-  //     });
-  // });
 
 //=========================================== Login API
 router.post('/login', (req, res) => {
-    let { username, password } = req.body;
+    let { email, password } = req.body;
   //added user id to returned info
-    db.findBy({ username })
+    db.findBy({ email })
       .first()
       .then(user => {
         if (user && bcrypt.compareSync(password, user.password)) {
