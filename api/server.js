@@ -1,14 +1,14 @@
 const express = require("express");
 const configureMiddleware = require('../helpers/config/serverSetup');
 const authRouter = require('./routes/authRouter');
-// const actionsRouter = require('./routes/actionsRouter');
+const projectRouter = require('./routes/projectRouter');
 // const usersRouter = require('./routes/usersRouter');
 
 const server = express();
 configureMiddleware(server);
 
 server.use('/api', authRouter);
-// server.use('/api/actions', actionsRouter);
+server.use('/api/project', projectRouter);
 // server.use('/api/users', usersRouter)
 
 server.get("/", async (req, res) => {
