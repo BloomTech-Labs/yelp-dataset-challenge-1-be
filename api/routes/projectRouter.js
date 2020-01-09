@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const db = require("../models/projectsModel");
+const db = require("../models/projectModels");
 
 //============================Create Router
 router.post("/", async (req, res) => {
-  
+  console.log("posted project", req.body)
     try {
       const project = req.body;
       const inserted = await db.addproject(project);

@@ -4,6 +4,11 @@ exports.up = function(knex, Promise) {
 
       tbl.text("project");
 
+      tbl.integer("Totalvotes");
+      tbl.integer("Helpfulvotes");
+      tbl.integer("Funnyvotes");
+      tbl.integer("Usefulvotes");
+
       tbl
       .string('email')
       .unsigned()

@@ -8,7 +8,7 @@ const server = express();
 configureMiddleware(server);
 
 server.use('/api', authRouter);
-server.use('/api/project', projectRouter);
+server.use('/api/projects', projectRouter);
 // server.use('/api/users', usersRouter)
 
 server.get("/", async (req, res) => {
